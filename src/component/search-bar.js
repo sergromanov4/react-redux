@@ -15,7 +15,7 @@ class SearchBar extends React.Component{
         })
 
         this.refs.scan.value="";
-        
+
      }   
   
     render(){
