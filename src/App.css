@@ -12,6 +12,21 @@
   flex-wrap: wrap;
 }
 
+.search>input{
+  border-radius: 3px 0 0 3px;
+  height: 24px;
+  width:200px;
+  border:solid 1px #004F72;
+}
+.search>button{
+  border-radius:  0 3px 3px 0 ;
+  height: 26px;
+  width:50px;
+  border:solid 1px #004F72; 
+  background-color:#3BA4C7; 
+  color:#E5FFFF; 
+}
+
 main{
   background-color: #282c34;
   margin-top:20px;
@@ -42,7 +57,6 @@ main{
 .film:hover{
   box-shadow: 4px 3px 19px 2px #2be6be
 }
-
 
 
 .aside-bar{

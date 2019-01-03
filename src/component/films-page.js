@@ -4,18 +4,10 @@ import {connect} from 'react-redux'
 
 class FilmsPage extends React.Component{
     genre(i){
-        this.props.dispatch({
-            type:"GENRE_CHANGE",
-            payload:i
-        })
-        this.props.dispatch({
-            type:"SEARCH",
-            payload:''
-        })
-        this.props.dispatch({
-            type:"SEARCHED",
-            payload:false
-        })
+        this.props.genreChange(i)
+        this.props.searchClear()
+        this.props.searchClearFlag()
+
     }
     render(){    
     
@@ -66,7 +58,36 @@ class FilmsPage extends React.Component{
 
 function mapStateToProps(state){
     return state.filmsReducer
-  }
+ }
 
-export default connect(mapStateToProps)(FilmsPage);
+ function mapDispatchToProps(dispatch){
+     return{
+        genreChange: (i) => {
+            dispatch(
+                {
+                type:"GENRE_CHANGE",
+                payload: i
+                }
+            );
+        },
+        searchClear:()=>{
+            dispatch(
+                {
+                    type:"SEARCH",
+                    payload: ""
+                 }
+            )
+        },
+        searchClearFlag:()=>{
+            dispatch(
+                {
+                    type:"SEARCHED",
+                    payload: false
+                 }
+            )
+        },
+     }
+ }
+
+export default connect(mapStateToProps,mapDispatchToProps)(FilmsPage);
   

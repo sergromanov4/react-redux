@@ -5,18 +5,9 @@ import {connect} from 'react-redux'
 class AsideBar extends React.Component{
 
     genre(item){
-        this.props.dispatch({
-            type:"GENRE_CHANGE",
-            payload:item
-        })
-        this.props.dispatch({
-            type:"SEARCH",
-            payload:''
-        })
-        this.props.dispatch({
-            type:"SEARCHED",
-            payload:false
-        })
+        this.props.genreChange(item)
+        this.props.searchClear()
+        this.props.searchClearFlag()
     }
 
     render(){
@@ -38,5 +29,35 @@ class AsideBar extends React.Component{
 
 function mapStateToProps(state){
     return state.filmsReducer
-  }
-export default connect(mapStateToProps)(AsideBar);
+ }
+
+  function mapDispatchToProps(dispatch){
+    return{
+       genreChange: (i) => {
+           dispatch(
+               {
+               type:"GENRE_CHANGE",
+               payload: i
+               }
+           );
+       },
+       searchClear:()=>{
+           dispatch(
+               {
+                   type:"SEARCH",
+                   payload: ""
+                }
+           )
+       },
+       searchClearFlag:()=>{
+           dispatch(
+               {
+                   type:"SEARCHED",
+                   payload: false
+                }
+           )
+       },
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(AsideBar);
