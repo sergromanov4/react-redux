@@ -9,6 +9,14 @@ class AsideBar extends React.Component{
             type:"GENRE_CHANGE",
             payload:item
         })
+        this.props.dispatch({
+            type:"SEARCH",
+            payload:''
+        })
+        this.props.dispatch({
+            type:"SEARCHED",
+            payload:false
+        })
     }
 
     render(){

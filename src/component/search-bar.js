@@ -9,14 +9,20 @@ class SearchBar extends React.Component{
             type:"SEARCH",
             payload: this.refs.scan.value
         })
-            
+        this.props.dispatch({
+            type:"SEARCHED",
+            payload:true
+        })
+
+        this.refs.scan.value="";
+        
      }   
   
     render(){
      
         return(
             <div className="search">
-                <input type="text" ref="scan" />
+                <input type="text" ref="scan" placeholder="Поиск фильма" />
                 <button onClick={this.edit.bind(this)}>Поиск</button>
          </div>
         )

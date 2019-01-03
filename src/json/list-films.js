@@ -1,7 +1,8 @@
 export default {
    "genre":["all","carton","action","advanture","drama","fantasy","horror","comedy"],
    "genreNow":"all",
-   "search":{title:''},
+   "searched":false,
+   "title":"",
  "films":[
      {
         "id":1,
