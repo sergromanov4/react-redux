@@ -6,6 +6,8 @@ class SearchBar extends React.Component{
     edit(){
         this.props.seacrhValue(this.refs.scan.value)
         this.props.searchFlag()
+        this.props.clearID()
+        this.props.clearShowEachFilm()
         this.refs.scan.value="";
      }   
   
@@ -42,7 +44,23 @@ function mapDispacthToProps(dispatch){
                 payload: true
                 }
             );
-        }
+        },
+        clearID:()=>{
+            dispatch(
+                {
+                    type:"CHANGE_ID",
+                    payload: ''
+                 }
+            )
+        },
+        clearShowEachFilm:()=>{
+            dispatch(
+                {
+                    type:"CHANGE_SHOW_FILM",
+                    payload: false
+                 }
+            )
+        },
     }
 }
  

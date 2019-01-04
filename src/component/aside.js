@@ -8,6 +8,8 @@ class AsideBar extends React.Component{
         this.props.genreChange(item)
         this.props.searchClear()
         this.props.searchClearFlag()
+        this.props.clearID()
+        this.props.clearShowEachFilm()
     }
 
     render(){
@@ -57,6 +59,22 @@ function mapStateToProps(state){
                 }
            )
        },
+       clearID:(id)=>{
+             dispatch(
+                 {
+                      type:"CHANGE_ID",
+                      payload: ''
+                   }
+        )
+    },
+         clearShowEachFilm:()=>{
+             dispatch(
+            {
+                type:"CHANGE_SHOW_FILM",
+                payload: false
+             }
+        )
+    },
     }
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import FilmsPage from '../component/films-page.js'
+import MainContent from '../component/mainFilms.js'
 import AsideBar from '../component/aside.js'
 
 
 function MainBox(){
     return(
         <main>
-            <FilmsPage />
+            <MainContent />
             <AsideBar />
         </main>
     )
